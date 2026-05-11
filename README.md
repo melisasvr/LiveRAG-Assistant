@@ -14,29 +14,29 @@ RSS Feeds (17 sources)
        ▼
 ┌──────────────────┐     APScheduler      ┌────────────────────┐
 │  Ingestion Layer  │ ──── every 10min ───▶│  ChromaDB (local)  │
-│  fetcher.py       │                      │  Persistent vector │
-│  trafilatura      │                      │  store with meta   │
-│  newspaper3k      │                      │  (publish_date,    │
+│  fetcher.py       │                     │  Persistent vector │
+│  trafilatura      │                     │  store with meta   │
+│  newspaper3k      │                     │  (publish_date,    │
 └──────────────────┘                      │   source, url, cat)│
                                           └────────────────────┘
                                                     │
                                           ┌─────────▼──────────┐
-                                          │  Hybrid Retrieval   │
-                                          │  similarity search  │
-                                          │  + recency re-rank  │
+                                          │  Hybrid Retrieval  │
+                                          │  similarity search │
+                                          │  + recency re-rank │
                                           └─────────┬──────────┘
                                                     │
                                           ┌─────────▼──────────┐
                                           │  Groq LLM Chain    │
                                           │  Llama 3.3 70B     │
-                                          │  Time-aware prompt  │
+                                          │  Time-aware prompt │
                                           └─────────┬──────────┘
                                                     │
                                           ┌─────────▼──────────┐
-                                          │  Streamlit UI       │
-                                          │  Chat / News /      │
-                                          │  Live vs Static /   │
-                                          │  Analytics          │
+                                          │  Streamlit UI      │
+                                          │  Chat / News /     │
+                                          │  Live vs Static /  │
+                                          │  Analytics         │
                                           └────────────────────┘
 ```
 
